@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공공기관 포털 기본 구조</title>
+  <link rel="stylesheet" href="./krds-tokens.css">
+  <link rel="stylesheet" href="./krds-components.css">
+</head>
+<body class="krds-page">
+  <a class="krds-skip-link" href="#krds-main">본문 바로가기</a>
+  <!-- Insert the current official KRDS masthead snippet here only when this is an actual digital government service. -->
+
+  <header class="krds-site-header">
+    <div class="krds-shell">
+      <p class="krds-site-title">
+        <a class="krds-site-home" href="/" aria-label="예시 공공서비스 포털 메인으로 이동">예시 공공서비스 포털</a>
+      </p>
+      <p class="krds-site-meta">기관 소개, 신청, 정보 조회를 위한 대국민 포털 예시</p>
+      <nav class="krds-gnb" aria-label="주요 메뉴">
+        <a href="#">기관소개</a>
+        <a href="#">커뮤니케이션</a>
+        <a href="#" aria-current="page">이용신청</a>
+        <a href="#">지식정보</a>
+        <a href="#">교육</a>
+        <a href="#">통합 상황판</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Insert breadcrumb.html directly above the page title only on interior pages with real hierarchy depth. -->
+
+  <main id="krds-main" class="krds-shell" tabindex="-1">
+    <section class="krds-page-header">
+      <h1 class="krds-page-title">자주 찾는 서비스</h1>
+      <p class="krds-page-desc">핵심 서비스 진입점을 첫 화면 상단에서 바로 제공합니다.</p>
+    </section>
+
+    <section class="krds-quick-links" aria-label="퀵메뉴">
+      <a class="krds-quick-link" href="#">
+        <h3 class="krds-quick-link-title">이용신청</h3>
+        <p class="krds-quick-link-text">서비스 신청과 진행 상태를 조회합니다.</p>
+      </a>
+      <a class="krds-quick-link" href="#">
+        <h3 class="krds-quick-link-title">상담 신청</h3>
+        <p class="krds-quick-link-text">연구 및 서비스 상담을 신청합니다.</p>
+      </a>
+      <a class="krds-quick-link" href="#">
+        <h3 class="krds-quick-link-title">공지사항</h3>
+        <p class="krds-quick-link-text">최신 안내와 주요 일정을 확인합니다.</p>
+      </a>
+      <a class="krds-quick-link" href="#">
+        <h3 class="krds-quick-link-title">지식정보</h3>
+        <p class="krds-quick-link-text">자료, 검색, 추천 정보를 확인합니다.</p>
+      </a>
+    </section>
+  </main>
+
+  <footer class="krds-site-footer">
+    <div class="krds-shell">
+      <div class="krds-footer-brand">
+        <p class="krds-footer-brand-title">
+          <a class="krds-footer-brand-link" href="/">예시 공공서비스 포털</a>
+        </p>
+        <p class="krds-footer-brand-text">신청, 정보조회, 안내 서비스를 제공하는 공공 누리집 예시</p>
+      </div>
+      <div class="krds-footer-meta">
+        <p>서울특별시 예시로 100 예시 공공서비스 포털</p>
+        <p>대표전화 02-0000-0000 · 이메일 help@example.org</p>
+      </div>
+      <div class="krds-footer-links krds-footer-utility" aria-label="이용 안내 링크">
+        <a href="#">누리집 안내</a>
+        <a href="#">이용안내</a>
+        <a href="#">자주 묻는 질문</a>
+        <a href="#">오시는 길</a>
+      </div>
+      <div class="krds-footer-links krds-footer-policy" aria-label="정책 및 안내 링크">
+        <a class="krds-footer-policy-emphasis" href="#">개인정보 처리방침</a>
+        <a href="#">이용약관</a>
+        <a href="#">저작권 정책</a>
+      </div>
+      <p class="krds-footer-copyright">© Example Public Service. All rights reserved.</p>
+      <div class="krds-footer-identifier-block">
+        <!-- Insert the current official KRDS operating-institution identifier here only when this is an actual digital government service. -->
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

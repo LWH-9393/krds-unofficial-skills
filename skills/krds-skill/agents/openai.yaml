@@ -1,0 +1,4 @@
+interface:
+  display_name: "KRDS Skill"
+  short_description: "KRDS 기준 공공기관 웹사이트 설계와 검토 가이드"
+  default_prompt: "Use $krds-skill to design or review a Korean public-sector website against the latest official KRDS guidance."

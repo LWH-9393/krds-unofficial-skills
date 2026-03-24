@@ -1,0 +1,4 @@
+interface:
+  display_name: "KRDS Public Service Texture"
+  short_description: "공공기관 실서비스 질감과 운영 화면 패턴 보강"
+  default_prompt: "Use $krds-public-service-texture to add real public-service texture and operational density to a KRDS-aligned Korean public-sector UI."
