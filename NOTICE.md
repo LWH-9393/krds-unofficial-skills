@@ -7,6 +7,7 @@ This repository is an unofficial skill bundle.
 This repository references and adapts public guidance from KRDS:
 - KRDS website: https://www.krds.go.kr/
 - KRDS HTML Component Kit: https://github.com/KRDS-uiux/krds-uiux
+- KRDS resource downloads and self-check checklist: https://www.krds.go.kr/html/site/outline/outline_05.html
 - KRDS copyright and license information: https://www.krds.go.kr/html/eng/utility/utility_05.html
 
 According to the official KRDS copyright page, KRDS materials are provided under KOGL Type 1 with source attribution requirements. If you redistribute derived or adapted materials, keep clear attribution to KRDS and verify the latest official terms before release.

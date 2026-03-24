@@ -1,0 +1,4 @@
+interface:
+  display_name: "KRDS UIUX Self Check"
+  short_description: "KRDS 자가 검증 체크리스트 기반 공공서비스 UI/UX 감사"
+  default_prompt: "Use $krds-uiux-self-check to audit a Korean public-sector website or service flow against the KRDS self-check checklist and produce a structured P/F/E/N/A review."

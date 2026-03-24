@@ -7,6 +7,8 @@ This bundle separates two concerns:
   - KRDS compliance, structure, trust markers, accessibility, and latest-reference verification
 - `skills/krds-public-service-texture`
   - real public-service texture, operational density, ownership cues, notice/detail/filter/contact patterns
+- `skills/krds-uiux-self-check`
+  - checklist-based self-audit, scope planning, P/F/E/N/A verdicting, and report writing based on the KRDS self-check checklist
 
 ## Status
 
@@ -25,13 +27,16 @@ Copy the skill folders under your Codex skills directory:
 ```text
 $CODEX_HOME/skills/krds-skill
 $CODEX_HOME/skills/krds-public-service-texture
+$CODEX_HOME/skills/krds-uiux-self-check
 ```
 
 ## Usage
 
 - Use `$krds-skill` when the task is about latest KRDS compliance, review, accessibility, trust markers, or public-service structure.
 - Use `$krds-public-service-texture` when the screen already follows KRDS but still feels too generic, too clean, or unlike a live public institution service.
+- Use `$krds-uiux-self-check` when the task is a structured self-audit, checklist-based review, verdict sheet, or KRDS-style P/F/E/N/A validation.
 - Use both when you need compliance first and real-service texture second.
+- Use `$krds-uiux-self-check` with `$krds-skill` when you need the `2024.11` self-check framework plus the latest official KRDS page verification.
 
 ## Reliability Aids
 
