@@ -1,6 +1,6 @@
 # Notice
 
-This repository is an unofficial community-maintained skill bundle.
+This repository is an unofficial skill bundle.
 
 ## KRDS attribution
 

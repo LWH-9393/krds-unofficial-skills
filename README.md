@@ -1,4 +1,4 @@
-# KRDS Community Skills
+# KRDS Unofficial Skills
 
 Unofficial Codex skills for Korean public-sector UI work based on KRDS references.
 
