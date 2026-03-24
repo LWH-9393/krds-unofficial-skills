@@ -53,6 +53,23 @@ $CODEX_HOME/skills/krds-uiux-self-check
 - `skills/krds-public-service-texture/references/transformation-examples.md`
   - concrete "generic mockup -> KRDS aligned -> textured public-service screen" examples
 
+## Upstream Connection
+
+- Tracked upstream repository:
+  - [KRDS-uiux/krds-uiux](https://github.com/KRDS-uiux/krds-uiux)
+- Local repository connection:
+  - add an `upstream` git remote pointing to `https://github.com/KRDS-uiux/krds-uiux.git`
+- Release metadata check:
+  - `python3 scripts/check_krds_upstream.py`
+- Manifest refresh:
+  - `python3 scripts/check_krds_upstream.py --write`
+
+This repository does not vendor the full upstream source tree.
+Instead, it tracks:
+- upstream release metadata in `skills/krds-skill/references/asset-verification-manifest.yaml`
+- official KRDS page mappings in the skill references
+- a repo-level upstream check script
+
 ## Repository Notes
 
 - Example institution names, addresses, phone numbers, emails, dates, and attachments in the assets are fictional examples for demonstration.
