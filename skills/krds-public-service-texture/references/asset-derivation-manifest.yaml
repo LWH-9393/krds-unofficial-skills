@@ -1,0 +1,114 @@
+schema_version: 1
+verified_on: 2026-03-24
+notes:
+  - These assets are not direct KRDS upstream copies.
+  - Each asset is a texture-layer example derived from current KRDS patterns and should be lifted selectively.
+assets:
+  assets/public-service-texture.css:
+    type: support-css
+    last_verified_on: 2026-03-24
+    official_refs:
+      - label: Service detail
+        url: https://www.krds.go.kr/html/site/service/service_04_03.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+      - label: Policy archive exploration
+        url: https://www.krds.go.kr/html/site/service/service_05_04.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+      - label: Attachment pattern
+        url: https://www.krds.go.kr/html/site/global/global_09.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+    adds_texture:
+      - Mixed block density for notices, owner boxes, filter bars, and attachment panels.
+    use_when:
+      - You already have a KRDS-aligned base and need only the texture layer.
+    do_not_use_when:
+      - KRDS compliance decisions are still unsettled.
+  assets/home-service-layout.html:
+    type: home-or-overview-partial
+    last_verified_on: 2026-03-24
+    official_refs:
+      - label: Service detail
+        url: https://www.krds.go.kr/html/site/service/service_04_03.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+      - label: Policy archive exploration
+        url: https://www.krds.go.kr/html/site/service/service_05_04.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+    adds_texture:
+      - Service-entry area mixed with latest notices and support ownership blocks.
+    use_when:
+      - A public home or service-overview screen feels like a clean mockup rather than a live service.
+    do_not_use_when:
+      - The page is an internal dashboard or a marketing hero page.
+  assets/search-filter-toolbar.html:
+    type: filter-and-count-partial
+    last_verified_on: 2026-03-24
+    official_refs:
+      - label: Search result review
+        url: https://www.krds.go.kr/html/site/service/service_02_04.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+      - label: Policy archive exploration
+        url: https://www.krds.go.kr/html/site/service/service_05_04.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+    adds_texture:
+      - Counts, filters, period controls, and operational toolbar density.
+    use_when:
+      - A board or archive list needs realistic retrieval controls.
+    do_not_use_when:
+      - The page is just a few hand-picked links rather than a searchable list.
+  assets/notice-list-panel.html:
+    type: notice-density-partial
+    last_verified_on: 2026-03-24
+    official_refs:
+      - label: Policy archive exploration
+        url: https://www.krds.go.kr/html/site/service/service_05_04.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+    adds_texture:
+      - Notice metadata, importance labels, and realistic list density.
+    use_when:
+      - The screen should expose current notices, schedules, or change announcements.
+    do_not_use_when:
+      - The page does not actually maintain time-sensitive or operational announcements.
+  assets/attachment-list.html:
+    type: attachment-partial
+    last_verified_on: 2026-03-24
+    official_refs:
+      - label: Attachment pattern
+        url: https://www.krds.go.kr/html/site/global/global_09.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+      - label: Service detail
+        url: https://www.krds.go.kr/html/site/service/service_04_03.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+    adds_texture:
+      - File type, size, download, and preview affordances.
+    use_when:
+      - A detail page needs downloadable reference material, forms, or notices.
+    do_not_use_when:
+      - There are no real downloadable files.
+  assets/contact-owner-box.html:
+    type: ownership-partial
+    last_verified_on: 2026-03-24
+    official_refs:
+      - label: Service detail
+        url: https://www.krds.go.kr/html/site/service/service_04_03.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+      - label: Application form
+        url: https://www.krds.go.kr/html/site/service/service_04_05.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+    adds_texture:
+      - Responsible department, phone, email, and update ownership.
+    use_when:
+      - The page needs visible ownership and support contact cues.
+    do_not_use_when:
+      - Contact data is not current or cannot be owned by the target service.

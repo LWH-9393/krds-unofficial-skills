@@ -13,16 +13,18 @@ Use this skill to align a Korean public-sector web service with KRDS conventions
    - Public portal
    - Internal work portal
    - Admin or operations screen
-2. Read [references/krds-verification.md](references/krds-verification.md) first and check the relevant official KRDS page before using any bundled asset.
+2. Read [references/krds-verification.md](references/krds-verification.md) and [references/asset-verification-manifest.yaml](references/asset-verification-manifest.yaml) first before using any bundled asset.
 3. Read [references/krds-principles.md](references/krds-principles.md) for baseline rules.
-4. Read [references/krds-public-checklist.md](references/krds-public-checklist.md) when designing or reviewing a public-facing page.
-5. For a public-facing page, confirm the shell includes a skip link, a home-linked service identity, main navigation, and a footer built from the current KRDS footer pattern.
-6. Only use the official banner on an actual digital government service, and pull the current official snippet from `krds.go.kr` without altering its text or style.
-7. Only use breadcrumb on interior pages with real hierarchy depth. Do not place it on main pages, landing pages, or shallow two-level structures.
-8. Reuse assets from `assets/` only after the official KRDS date/version check and the structural requirements above fit the target page.
-9. Preserve keyboard focus, heading order, and current-location cues when lifting any markup or CSS.
-10. Keep the output focused on structure, clarity, accessibility, and trust markers.
-11. Prefer official KRDS sources on `krds.go.kr` when you need to verify a pattern.
+4. Read [references/decision-rules.md](references/decision-rules.md) when the correct pattern or omission condition is unclear.
+5. Read [references/krds-public-checklist.md](references/krds-public-checklist.md) when designing or reviewing a public-facing page.
+6. For a public-facing page, confirm the shell includes a skip link, a home-linked service identity, main navigation, and a footer built from the current KRDS footer pattern.
+7. Only use the official banner on an actual digital government service, and pull the current official snippet from `krds.go.kr` without altering its text or style.
+8. Only use breadcrumb on interior pages with real hierarchy depth. Do not place it on main pages, landing pages, or shallow two-level structures.
+9. Reuse assets from `assets/` only after the official KRDS date/version check and the structural requirements above fit the target page.
+10. Preserve keyboard focus, heading order, and current-location cues when lifting any markup or CSS.
+11. Run `scripts/check_placeholders.py` against the target implementation before production handoff when example strings might still be present.
+12. Keep the output focused on structure, clarity, accessibility, and trust markers.
+13. Prefer official KRDS sources on `krds.go.kr` when you need to verify a pattern.
 
 ## Asset Use Order
 
@@ -30,11 +32,13 @@ When the request involves actual UI implementation, use assets in this order.
 
 1. Relevant official KRDS page on `krds.go.kr`
    - Check the page's information change history and linked HTML Component Kit version first.
-2. `assets/krds-tokens.css`
+2. [references/asset-verification-manifest.yaml](references/asset-verification-manifest.yaml)
+   - Confirm the asset-to-official-page mapping, last verification date, change date, kit version, and use conditions.
+3. `assets/krds-tokens.css`
    - Start with color, spacing, radius, shadow, and typography tokens.
-3. `assets/krds-components.css`
+4. `assets/krds-components.css`
    - Reuse public-service components such as skip links, header, breadcrumb, quick links, board list, board detail, badges, forms, step indicators, help-panel trigger and panel states, confirmation panels, completion panels, page actions, and footer.
-4. HTML templates
+5. HTML templates
    - `assets/portal-shell.html`
    - `assets/breadcrumb.html`
    - `assets/board-list.html`
@@ -43,7 +47,7 @@ When the request involves actual UI implementation, use assets in this order.
    - `assets/application-confirm.html`
    - `assets/application-complete.html`
    - `assets/public-dashboard.html`
-5. SVG icons in `assets/icons/`
+6. SVG icons in `assets/icons/`
    - Use only when they support navigation or actions.
 
 Do not copy every asset into the user project blindly. Lift only the pieces that fit the requested page, and rebuild any local asset that lags behind the official KRDS page you verified.
@@ -135,6 +139,7 @@ Action labels should be direct verbs:
 
 Always check:
 - official KRDS page date and linked kit version before reusing a local asset
+- the asset manifest entry still matches the official page you opened in the same turn
 - skip link target lands on the real content start
 - heading hierarchy
 - color contrast
@@ -149,6 +154,7 @@ Always check:
 - when confirm exists, complete screen avoids repeating the full submitted-information summary
 - table header clarity
 - button hit area
+- placeholder lint result before shipping example-derived markup into production
 
 ## Output Pattern
 
@@ -169,7 +175,9 @@ If a user references a KRDS page or asks for current KRDS guidance:
 ## References
 
 - Latest verification workflow: [references/krds-verification.md](references/krds-verification.md)
+- Asset verification metadata: [references/asset-verification-manifest.yaml](references/asset-verification-manifest.yaml)
 - Baseline summary: [references/krds-principles.md](references/krds-principles.md)
+- Decision rules: [references/decision-rules.md](references/decision-rules.md)
 - Public website checklist: [references/krds-public-checklist.md](references/krds-public-checklist.md)
 
 ## Assets
@@ -185,3 +193,7 @@ If a user references a KRDS page or asks for current KRDS guidance:
 - Application complete: [assets/application-complete.html](assets/application-complete.html)
 - Public dashboard: [assets/public-dashboard.html](assets/public-dashboard.html)
 - Icons: `assets/icons/*.svg`
+
+## Scripts
+
+- Placeholder lint: `scripts/check_placeholders.py`

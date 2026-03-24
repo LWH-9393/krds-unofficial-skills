@@ -33,6 +33,21 @@ $CODEX_HOME/skills/krds-public-service-texture
 - Use `$krds-public-service-texture` when the screen already follows KRDS but still feels too generic, too clean, or unlike a live public institution service.
 - Use both when you need compliance first and real-service texture second.
 
+## Reliability Aids
+
+- `skills/krds-skill/references/asset-verification-manifest.yaml`
+  - asset-to-official KRDS page mapping, last verification date, change date, kit version, and use conditions
+- `skills/krds-skill/references/decision-rules.md`
+  - rule table for banner, identifier, breadcrumb, help panel, confirm, and complete patterns
+- `skills/krds-skill/scripts/check_placeholders.py`
+  - placeholder lint for `example.org`, zeroed phone numbers, hard-coded sample dates, and dummy receipt numbers
+- `skills/krds-public-service-texture/references/asset-derivation-manifest.yaml`
+  - texture-asset derivation map back to current official KRDS references
+- `skills/krds-public-service-texture/references/texture-activation-rules.md`
+  - when to add real-service texture and when not to
+- `skills/krds-public-service-texture/references/transformation-examples.md`
+  - concrete "generic mockup -> KRDS aligned -> textured public-service screen" examples
+
 ## Repository Notes
 
 - Example institution names, addresses, phone numbers, emails, dates, and attachments in the assets are fictional examples for demonstration.

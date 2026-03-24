@@ -29,8 +29,11 @@ This skill adds the parts that make a screen feel like a real public service in 
    - Public dashboard or integrated search
 3. Read the right reference files.
    - Start with [references/texture-principles.md](references/texture-principles.md)
+   - Check [references/asset-derivation-manifest.yaml](references/asset-derivation-manifest.yaml) before lifting a partial into a real screen
    - Use [references/page-archetypes.md](references/page-archetypes.md) for block recipes
+   - Use [references/texture-activation-rules.md](references/texture-activation-rules.md) when unsure whether texture should be added at all
    - Use [references/copy-patterns.md](references/copy-patterns.md) when the screen sounds too generic
+   - Use [references/transformation-examples.md](references/transformation-examples.md) when the user needs a concrete before/after comparison
    - Use [references/realism-checklist.md](references/realism-checklist.md) when reviewing
 4. Reuse only the texture assets that match the page.
    - Load [assets/public-service-texture.css](assets/public-service-texture.css) after the base KRDS tokens and components
@@ -38,6 +41,7 @@ This skill adds the parts that make a screen feel like a real public service in 
 5. Preserve official KRDS conditions.
    - Do not invent banner or identifier usage
    - Do not break breadcrumb, footer, help-panel, or step-flow rules already enforced by [$krds-skill](../krds-skill/SKILL.md)
+   - Run `../krds-skill/scripts/check_placeholders.py` against the target implementation before production handoff when sample text may remain
 
 ## What This Skill Changes
 
@@ -192,7 +196,10 @@ When using this skill, structure the answer in this order unless the user asks o
 
 ## References
 
+- Asset derivation metadata: [references/asset-derivation-manifest.yaml](references/asset-derivation-manifest.yaml)
+- Texture activation rules: [references/texture-activation-rules.md](references/texture-activation-rules.md)
 - Texture principles: [references/texture-principles.md](references/texture-principles.md)
 - Page archetypes: [references/page-archetypes.md](references/page-archetypes.md)
 - Copy patterns: [references/copy-patterns.md](references/copy-patterns.md)
+- Transformation examples: [references/transformation-examples.md](references/transformation-examples.md)
 - Realism checklist: [references/realism-checklist.md](references/realism-checklist.md)

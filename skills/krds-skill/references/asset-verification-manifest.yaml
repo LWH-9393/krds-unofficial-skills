@@ -1,0 +1,211 @@
+schema_version: 1
+verified_on: 2026-03-24
+upstream:
+  krds_site: https://www.krds.go.kr/
+  html_component_kit_latest:
+    version: v1.1.0
+    released_on: 2026-01-12
+    url: https://github.com/KRDS-uiux/krds-uiux/releases/tag/1.1.0
+notes:
+  - This manifest records the latest official KRDS pages checked when the local assets were reviewed.
+  - Composite assets still require an in-turn check against the exact official page being reused.
+assets:
+  assets/krds-tokens.css:
+    type: support-css
+    last_verified_on: 2026-03-24
+    official_refs: []
+    use_when:
+      - You need the local token bundle as a starting point for KRDS-aligned spacing, color, typography, and elevation.
+    do_not_use_when:
+      - You need a direct copy of the official KRDS token source without local consolidation.
+    verification_scope:
+      - Verify the specific component or service pattern pages touched by the screen in the same turn.
+  assets/krds-components.css:
+    type: support-css
+    last_verified_on: 2026-03-24
+    official_refs:
+      - label: Header
+        url: https://www.krds.go.kr/html/site/component/component_02_03.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+      - label: Footer
+        url: https://www.krds.go.kr/html/site/component/component_02_04.html
+        info_change_date: 2025-09-01
+        kit_version: v1.0.6
+      - label: Breadcrumb
+        url: https://www.krds.go.kr/html/site/component/component_03_03.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+      - label: Help panel
+        url: https://www.krds.go.kr/html/site/component/component_08_01.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+    use_when:
+      - You are lifting only the selectors needed by a verified local HTML asset.
+    do_not_use_when:
+      - You have not verified the matching official page for the HTML fragment in the same turn.
+    verification_scope:
+      - Treat this file as local glue around multiple KRDS pages, not as a single canonical upstream artifact.
+  assets/portal-shell.html:
+    type: composite-shell
+    last_verified_on: 2026-03-24
+    official_refs:
+      - label: Official banner
+        url: https://www.krds.go.kr/html/site/component/component_02_01.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+      - label: Identifier
+        url: https://www.krds.go.kr/html/site/component/component_02_02.html
+        info_change_date: 2025-09-01
+        kit_version: v1.0.6
+      - label: Header
+        url: https://www.krds.go.kr/html/site/component/component_02_03.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+      - label: Footer
+        url: https://www.krds.go.kr/html/site/component/component_02_04.html
+        info_change_date: 2025-09-01
+        kit_version: v1.0.6
+    use_when:
+      - The page is a public-facing Korean public-service shell.
+      - The header service identity links to the main page.
+      - The footer follows the current KRDS grouping for service logo, contact info, utility links, policy links, copyright, and optional identifier.
+    do_not_use_when:
+      - The target is an internal-only admin or operations screen.
+      - The service is not an official digital government service but would still render the official banner or identifier.
+    apply_conditions:
+      - Keep the banner and identifier as live inserts from the current official KRDS page, not as hard-coded local copies.
+      - Keep breadcrumb conditional and insert it only on eligible interior pages.
+  assets/breadcrumb.html:
+    type: navigation-fragment
+    last_verified_on: 2026-03-24
+    official_refs:
+      - label: Breadcrumb
+        url: https://www.krds.go.kr/html/site/component/component_03_03.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+    use_when:
+      - The page is an interior page with meaningful hierarchy depth.
+      - The breadcrumb can sit directly above the page title.
+    do_not_use_when:
+      - The page is a main page, landing page, or shallow structure where a breadcrumb adds little value.
+      - The breadcrumb would be used as a replacement for primary or side navigation.
+    apply_conditions:
+      - Wrap in nav with aria-label="브레드크럼".
+      - Use an ordered list.
+      - Keep the home item first.
+      - If the path exceeds four links, collapse the middle path with the current KRDS ellipsis pattern.
+  assets/board-list.html:
+    type: list-page
+    last_verified_on: 2026-03-24
+    official_refs:
+      - label: Policy archive exploration
+        url: https://www.krds.go.kr/html/site/service/service_05_04.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+      - label: Search result review
+        url: https://www.krds.go.kr/html/site/service/service_02_04.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+    use_when:
+      - The page is a public list view for notices, archives, or searchable public records.
+      - The list needs counts, metadata, filters, or badge-treated importance cues.
+    do_not_use_when:
+      - The list is a lightweight navigation menu rather than a content list.
+      - The page needs a domain-specific pattern that is materially different from notice or archive exploration.
+    apply_conditions:
+      - Verify filter and sort controls against the current KRDS list/search pages used for the target screen.
+      - Keep list metadata current and meaningful.
+  assets/board-detail.html:
+    type: detail-page
+    last_verified_on: 2026-03-24
+    official_refs:
+      - label: Service detail
+        url: https://www.krds.go.kr/html/site/service/service_04_03.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+      - label: Detail information
+        url: https://www.krds.go.kr/html/site/global/global_06.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+      - label: Attachment pattern
+        url: https://www.krds.go.kr/html/site/global/global_09.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+    use_when:
+      - The page is a public detail screen for a notice, policy, dataset, or service information item.
+    do_not_use_when:
+      - The content is only a short announcement better handled inline on a list page.
+    apply_conditions:
+      - Keep title, metadata, attachments, and return path aligned with the current KRDS detail patterns.
+      - Omit empty sections.
+  assets/application-form.html:
+    type: service-application-input
+    last_verified_on: 2026-03-24
+    official_refs:
+      - label: Application form
+        url: https://www.krds.go.kr/html/site/service/service_04_05.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+      - label: Help panel
+        url: https://www.krds.go.kr/html/site/component/component_08_01.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+    use_when:
+      - The page is a public application input step.
+      - Users may need supporting help, FAQ links, example content, or contact information while filling the form.
+    do_not_use_when:
+      - The task is a simple one-field action that does not need a staged application pattern.
+    apply_conditions:
+      - Keep the current step programmatically identifiable.
+      - Provide at least one help route, including contact information.
+      - Match the current KRDS help-panel trigger and panel behavior when using the panel form.
+  assets/application-confirm.html:
+    type: service-confirmation
+    last_verified_on: 2026-03-24
+    official_refs:
+      - label: Confirm and finalize
+        url: https://www.krds.go.kr/html/site/service/service_04_06.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+    use_when:
+      - The submission cannot be cancelled, withdrawn, or edited later.
+      - The application contains high-impact values that the user must review before final submission.
+    do_not_use_when:
+      - The request is an issuance-style repetitive application where KRDS allows omitting the confirm step.
+      - The submission can be safely edited or cancelled after submission.
+    apply_conditions:
+      - Summarize only key information, not the entire form payload.
+      - Provide both confirm and back actions.
+      - State what cannot be cancelled or corrected after submission.
+  assets/application-complete.html:
+    type: service-completion
+    last_verified_on: 2026-03-24
+    official_refs:
+      - label: Completion
+        url: https://www.krds.go.kr/html/site/service/service_04_07.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+    use_when:
+      - The application has been successfully submitted.
+    do_not_use_when:
+      - The flow has not actually completed submission yet.
+    apply_conditions:
+      - Always provide a completion screen after submission.
+      - If a confirm step already existed, omit the full submitted-information summary and keep the page focused on result, next steps, and status path.
+  assets/public-dashboard.html:
+    type: public-status-or-search-screen
+    last_verified_on: 2026-03-24
+    official_refs:
+      - label: Search result review
+        url: https://www.krds.go.kr/html/site/service/service_02_04.html
+        info_change_date: 2025-01-15
+        kit_version: v1.0.1
+    use_when:
+      - The page is a public-facing status, count, or search-result screen with safe-for-disclosure metrics.
+    do_not_use_when:
+      - The dashboard exposes internal-only operations data.
+      - The page is being used as decorative KPI marketing rather than task support.
+    apply_conditions:
+      - Pair metrics with source labels, update stamps, or explanatory text.
+      - Verify each metric card or surrounding block against the exact KRDS pattern it resembles in the same turn.
